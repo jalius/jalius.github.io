@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Class Search Tool</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li><a href="index.html">Portfolio</a></li>
+						<li><a href="generic.html">About Me</a></li>
+					</ul>
+					<ul class="icons">
+						<li><a href="https://github.com/jalius" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+				</nav>
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Jan 2023</span>
+									<h1>Cal Poly Class Search</h1>
+									<p>Jalius Welch</p>
+								</header>
+								<h3>Inspiration</h3>
+								<p>The EE department at my school had a special policy of not allowing a waitlist for classes with labs. During registration time, I was spending a lot of time checking the course registration page for classes. Therefore, I decided to make an automated tool that would check the course registration page and send notifications to my phone if new openings appeared.
+								</p>
+								<figure class="image medium">
+									<img src="images/cpcourses/class_search_web.png" alt="" />
+									<figcaption class="align-center">Public class search endpoint.</figcaption>
+								</figure>
+								<h3>Program Design</h3>
+
+								<p>While I was only really looking for EE classes for a quarter, I wanted the program to work for students in other departments and for future years. Therefore, I designed the program to be configurable between catalog years and departments, by a user configuration file. The program was also designed to run 24/7 on a dedicated server, so it was implemented as a CLI Python program.
+								</p>
+								<figure class="image medium">
+									<img src="images/cpcourses/config.png" alt="" />
+									<figcaption class="align-center">Configuration tool for the class search program.</figcaption>
+								</figure>
+								<p>I decided to have the program run on Google Cloud Compute Engine servers, because they offered 24/7 use of a low-power server as part of the service’s free tier.
+								</p>
+
+
+								<figure class="image medium">
+									<img src="images/cpcourses/google_VM_CPCS.png" alt="" />
+									<figcaption class="align-center">Google Cloud VM dashboard, used to run the class search tool 24hrs daily</figcaption>
+								</figure>
+								<p>Using a standard Linux distribution with systemd, I created a startup and monitoring service that would keep the class search tool running and handle auto-restarting.
+								</p>
+
+								<div class="image medium">
+									<div class=""><img src="images/cpcourses/systemctl_status_CPCS.png" alt="" /></div>
+									<figcaption class="align-center">Class search tool up and running on the VM.</figcaption>
+								</div>
+							
+								<h3>Final Product</h3>
+
+								<div class="image small">
+									<div class=""><img src="images/cpcourses/app_notifications.jpg" alt="" /></div>
+									<figcaption class="align-center">Class search tool phone notifications with Pushover.net</figcaption>
+								</div>
+
+								<p>The final program was able to help me find classes for 3 quarters in a row. First I could configure the classes I wanted, then I would receive phone notifications whenever seats opened up. The program should continue to work as long as the course registration page is not significantly changed.
+								</p>
+
+								<hr />
+
+
+
+
+							</section>
+
+					</div>
+	
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Solar Charger</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li><a href="index.html">Portfolio</a></li>
+						<li><a href="generic.html">About Me</a></li>
+					</ul>
+					<ul class="icons">
+						<li><a href="https://github.com/jalius" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+				</nav>
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">March 2023</span>
+									<h1>Solar Phone Charger</h1>
+									<p>Jalius Welch</p>
+								</header>
+								<h3>Design</h3>
+								<p>The solar phone charger project is a senior design project that I completed as part of my Power Electronics II class. The assignment was to design a power electronic DC-DC converter that was capable of converting 20V from a solar panel to 5V 10W power that would be used to charge a phone via USB.</p>
+								<figure class="image medium">
+									<img src="images/solarcharger/Schematic_SolarCharger.png" alt="" />
+									<figcaption class="align-center">Schematic: component connections and values.</figcaption>
+								</figure>
+								<p>The board was constrained to 50mm x 100mm and the component packages were to be SMD. I selected a buck IC with PWM and internal switches, to reduce part count. The buck IC I selected also had an SOT23 package, which I selected over the smaller SOTs and BGA for the ease of hand-soldering for prototyping. This was the first time I've done layout for a high-frequency converter circuit, I followed the reference design from the buck-converter IC datasheet. This called for a straight shot between Vin and Vout, and large power tracks, to minimize inductance in the power path. I selected the remaining components to fit the design equations and recommendations in the buck's datasheet. </p>
+								<figure class="image medium">
+									<img src="images/solarcharger/Layout_SolarCharger.png" alt="" />
+									<figcaption class="align-center">Layout: the physical arrangment of components and associated traces.</figcaption>
+								</figure>
+
+								
+								<h3>Production</h3>
+								<p>After the layout was completed, I checked the net connections and trace widths, verified the design with my instructor and then sent the gerber and drill files to the board manufacturing plant.</p>
+								<figure class="image medium">
+									<img src="images/solarcharger/3DView_SolarCharger.png" alt="" />
+									<figcaption class="align-center">3D View: KiCad provides a 3D preview of the board for verification.</figcaption>
+								</figure>
+								<p>The final board arrived, and I hand-soldered the components onto the board without too much trouble, and proceeded to test the connections. Once the board was assembled, I ran open circuit and loaded tests to confirm the circuit met the rated specifications.</p>
+
+								<div class="image medium">
+									<div class=""><img src="images/solarcharger/final_solarcharger.jpg" alt="" /></div>
+									<figcaption class="align-center">Final Product: Components have been hand-soldered to the PCB.</figcaption>
+								</div>
+								<p>The board performed well in practical tests, and was able to charge a cell phone at 5V/250mA. The final board met all the specifications except for voltage regulation (coming in at 4%, over the specified 3%), while input and output voltages (22V in-max and 5V out), line regulation (<1%), and efficiency (87%) were met.</p>
+
+
+
+								<hr />
+
+
+
+
+							</section>
+
+					</div>
+	
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>PV Characterization</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Portfolio</a>
+					</header>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li><a href="index.html">Portfolio</a></li>
+						<li><a href="generic.html">About Me</a></li>
+					</ul>
+					<ul class="icons">
+						<li><a href="https://github.com/jalius" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					</ul>
+				</nav>
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">May 2023</span>
+									<h1>Solar Panel Characterization</h1>
+									<p>Jalius Welch</p>
+								</header>
+								<h3>Need</h3>
+								<p>For my senior project, I wanted to combine my passions for power electronics and embedded systems for a practical application. My goal was to create a portable and low-cost device that could characterize solar panels and other renewable energy sources.
+								</p>
+								<figure class="image medium">
+								<img src="images/pv_characterization/3DRender.png" alt="" />
+								<figcaption class="align-center"></figcaption>
+								</figure>
+								<h3>Design</h3>
+
+
+								<p>Solar panels along with other renewable energy sources have specific characteristics that depend on the applied load and the environmental conditions. I wanted this device to perform measurements for the analysis of maximum power point, I/V characteristics, and other source-loaded characteristics.
+								</p>
+								
+								<div class="box alt row gtr-50 gtr-uniform">
+									<figure class="image left">
+										<img src="images/pv_characterization/LargePanelDataPts.png" alt="" />
+										<figcaption class="align-center"></figcaption>
+									</figure>
+									<figure class="image right">
+										<img src="images/pv_characterization/LargePanelIV.png" alt="" />
+										<figcaption class="align-center"></figcaption>
+									</figure>
+								</div>
+								<p>The device is made up of two key systems: the microcontroller and the electronic load circuit. The microcontroller handles changing the current demanded by electronic load while recording the response of the source.
+								</p>
+
+								<figure class="image medium">
+									<img src="images/pv_characterization/TopLevelBBDiagram.drawio2.png" alt="" />
+									<figcaption class="align-center">Top level black-box diagram of the device.</figcaption>
+								</figure>
+								<p>The electronic load circuit was constructed to act as a voltage-controlled current sink, using an op amp that provides negative feedback to linearize the voltage to current behavior of the FET in its ohmic region. The microcontroller will apply a voltage to the control input which will be proportional to the current demanded from the source.
+								</p>
+
+								<div class="image medium">
+									<img src="images/pv_characterization/Eload_low_fi.png" alt="" />
+									<figcaption class="align-center">Low fidelity model for electronic load.</figcaption>
+								</div>
+								<p>In order to keep the circuit low-complexity, I decided to construct an electronic load circuit using commercially available ICs and microcontrollers. With this design, we can only measure relatively small solar panels. The main limiting factors in measuring larger panels are due to FET thermal limits and microcontroller resolution.
+								</p>
+								<figure class="image medium">
+									<img src="images/pv_characterization/test_panels.jpg" alt="" />
+									<figcaption class="align-center">Some panels used to test the device</figcaption>
+								</figure>
+								<p></p>
+
+								<p>The microcontroller will handle the load adjustment and data collection. The microcontroller also needs to keep track of device maximum power and dynamically adjust its data collection range on the second-pass, in order to provide more relevant data.
+								</p>
+								<div class="image medium">
+									<img src="images/pv_characterization/TopLevelCodeFlowchart2.drawio.png" alt="" />
+									<figcaption class="align-center">Top-level microcontroller logic flow.</figcaption>
+								</div>
+								
+
+														
+								<h3>Implementation</h3>
+								<figure class="image medium">
+									<img src="images/pv_characterization/SolarTestSetup.jpg" alt="" />
+									<figcaption class="align-center">An outdoor test setup in the early afternoon</figcaption>
+								</figure>
+
+
+								<p>The device successfully collects data over a range of source currents. The data can be imported to spreadsheet software for analysis and plotting.</p>
+								<p> In the future, it would be nice to create an enclosure for the device and increase the capabilities of the device, including both max power and data resolution.</p>
+								<figure class="image medium">
+									<img src="images/pv_characterization/finalprojsolardevice.jpg" alt="" />
+									<figcaption class="align-center">Bread-boarded implementation of the device.</figcaption>
+								</figure>
+								<p>In conclusion, the device functions as intended, and was able to capture data points to plot the IV characteristics of multiple test sources. 
+									The device can be used outdoors and off-grid with a battery source, which satisfies the portability requirement. The final device is low cost and low part count, making it easy to manufacture and distribute. While the device is capable of measuring a wide range of sources, the precision of the device suffers when testing low power sources. 
+									In my report, I propose increasing the DAC and ADC resolutions to resolve this. 
+									Additionally, while the device is incapable of measuring higher-power sources, an increase to the heat-sinking is demonstrated to be feasible for increasing the power limit of the device. 
+									Overall, the device is functional, low cost, portable, and is useful in characterizing solar and other energy sources.
+								</p>
+
+								<hr />
+
+
+
+
+							</section>
+
+					</div>
+	
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
